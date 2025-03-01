@@ -1,19 +1,14 @@
-name: CI Workflow
+name: Self-Hosted Runner Test
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: self-hosted
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - name: Check Runner
+        run: echo "Running on a self-hosted runner!"
 
-      - name: Run a Simple Script
-        run: echo "GitHub Actions Workflow is Running!"
